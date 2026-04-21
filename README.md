@@ -49,7 +49,7 @@ SHOW TABLES;
 <img width="251" height="250" alt="image" src="https://github.com/user-attachments/assets/cdeb4ac3-83f7-497e-8a54-b4452a59380f" />
 
 
-Кастомный конфиг MySQL
+## Кастомный конфиг MySQL
 
 Для получения дополнительных баллов был добавлен кастомный конфиг в файл:
 
@@ -72,8 +72,9 @@ collation-server=utf8mb4_unicode_ci
 Проверка применения параметров:
 ```
 docker-compose exec otusdb mysql --default-character-set=utf8mb4 -u root -p12345 otus
+```
 
-
+```
 SHOW VARIABLES LIKE 'innodb_buffer_pool_size';
 SHOW VARIABLES LIKE 'innodb_log_file_size';
 SHOW VARIABLES LIKE 'max_connections';
@@ -81,7 +82,7 @@ SHOW VARIABLES LIKE 'character_set_server';
 SHOW VARIABLES LIKE 'collation_server';
 ```
 
-Структура базы данных
+## Структура базы данных
 
 `categories`
 
@@ -113,7 +114,7 @@ SHOW VARIABLES LIKE 'collation_server';
 Таблица покупок.
 Связана с покупателями, товарами и ценами.
 
-Проверка данных
+## Проверка данных
 
 Примеры запросов:
 
@@ -127,7 +128,7 @@ SELECT * FROM prices;
 SELECT * FROM purchases;
 ```
 
-Тестирование с помощью sysbench
+## Тестирование с помощью sysbench
 
 Подготовка тестовых данных
 ```
@@ -206,7 +207,7 @@ sysbench /usr/share/sysbench/oltp_read_write.lua \
   cleanup
 ```
 
-Итог
+## Итог
 
 В рамках домашнего задания выполнено:
 
